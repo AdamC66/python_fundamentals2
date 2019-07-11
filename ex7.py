@@ -37,9 +37,10 @@ def fastest(speeds):
     #this must mean two speeds are the same, and thus 2 runners tied.
     two_same = set(speeds)
     if (len(two_same)) < (len(speeds)):
-        print("everyone had a good race, two runners tied")
+        print("everyone had a good race")
+        return()
 #the above could be taken a step further and check if a) the tied runners had the fastest speed and/or b, not output anything
-#if the tied speed was not the fastest.
+#if the tied speed was not the fastest., or just print "everyone had a good race" which would be the case in the original code.
     maxspeed = max(speeds)
     fastestperson = speeds.index(maxspeed)+1
     print("person {} was the fastest at {} m/s".format(fastestperson,maxspeed))
