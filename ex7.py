@@ -18,7 +18,7 @@ def calcspeeds(mins,distances):
     for x in range(len(distances)):
         speeds.append(distances[x]/(mins[x]*60))
         #this just prints the speed so I can confirm my fastest function finds the correct answer.
-        print(speeds[x])
+        #print(speeds[x])
     return(speeds)
 
 #checks if all items in speeds list is the same
@@ -43,9 +43,12 @@ def fastest(speeds):
 #if the tied speed was not the fastest., or just print "everyone had a good race" which would be the case in the original code.
     maxspeed = max(speeds)
     fastestperson = speeds.index(maxspeed)+1
-    print("person {} was the fastest at {} m/s".format(fastestperson,maxspeed))
+    print("\n\n person {} was the fastest at {:.2f} m/s".format(fastestperson,maxspeed))
 
 #call my functions
 getinput()
 speeds = calcspeeds(mins,distances)
 fastest(speeds)
+
+
+
