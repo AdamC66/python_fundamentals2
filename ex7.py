@@ -1,4 +1,3 @@
-
 totalpeople = 3
 distances= []
 mins=[]
@@ -29,14 +28,21 @@ def all_same(speeds):
 #find max speed max(speeds) , get index of that speed, add 1 and that's the fastest person
 #person starts at 1, index starts at 0
 def fastest(speeds):
+    #first we should check if all runners tied
     if all_same(speeds) == True:
         print("Everyone tied at {} m/s".format(speeds[0]))
         return()
+    #by converting the speeds list to a set, we remove duplicates
+    #if there was a duplicate, len(twos_same) will be less than len(speeds)
+    #this must mean two speeds are the same, and thus 2 runners tied.
+    two_same = set(speeds)
+    if (len(two_same)) < (len(speeds)):
+        print("everyone had a good race, two runners tied")
+#the above could be taken a step further and check if a) the tied runners had the fastest speed and/or b, not output anything
+#if the tied speed was not the fastest.
     maxspeed = max(speeds)
     fastestperson = speeds.index(maxspeed)+1
     print("person {} was the fastest at {} m/s".format(fastestperson,maxspeed))
-
-
 
 #call my functions
 getinput()
